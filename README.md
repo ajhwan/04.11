@@ -1,8 +1,22 @@
 # 04.11
-arduino practice
+Arduino Practice
 
+## 준비물
+  + 아두이노Uno보드, 브래드보드, LED, Button, 서보모터, 4.7kΩ, 220Ω 저항, 점퍼선 
+  
+## 기능
+|Pin number|Name|Function|
+|------|---|---|
+|7|Button|버튼기능|
+|8|Button|버튼기능|
+|6|LED|발광기능|
+|9|LED|발광기능|
+|11|Servo|모터동작|
+
+## TinkerCad
 ![tinkercad](Button_With_MoterSensor.png)
 
+## 동작
 + IlluminationSensor_CompareWithPrevious
   + 조도센서를 이용해 LED를 제어한다.
   + 현재 값이 크면 첫번째 LED를 이전의 값이 크면 두번째 LED를 켠다.
