@@ -2,11 +2,12 @@
 Arduino Practice
 
 ## 준비물
-  + 아두이노Uno보드, 브래드보드, LED, Button, 서보모터, 4.7kΩ, 220Ω 저항, 점퍼선 
+  + 아두이노Uno보드, 브래드보드, LED, Button, 조도센서, 서보모터, 4.7kΩ, 220Ω 저항, 점퍼선 
   
 ## 기능
 |Pin number|Name|Function|
-|------|---|---|
+|------|-----|---|
+|A1|IlluminationSensor|밝기감지|
 |7|Button|버튼기능|
 |8|Button|버튼기능|
 |6|LED|발광기능|
