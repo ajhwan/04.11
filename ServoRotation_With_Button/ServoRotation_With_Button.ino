@@ -1,28 +1,40 @@
 #include <Servo.h>
 
-Servo myservo; 
-
-int pos = 0;  
-int buttonPin = 7;
+Servo servo;
+const int SERVO = 11;
+const int buttonPin1 = 7;
+const int buttonPin2 = 8;
+int pos = 0;
 
 void setup() {
-  myservo.attach(11);
-  pinMode(buttonPin, INPUT);
+  pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin2, INPUT);
+  servo.attach(SERVO);
+  servo.write(0);
+  delay(1000);
 }
 
 void loop() {
-  int buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH)
-  {
-    myservo.write(pos);
-    pos = pos+10;
+  int buttonInput1 = digitalRead(buttonPin1);
+  int buttonInput2 = digitalRead(buttonPin2);
+
+  if (buttonInput1 == HIGH && buttonInput2 == HIGH) {
+    pos = 0;
+    servo.write(pos);
     delay(200);
   }
-  if (pos == 180)
-  {
-    delay(3000);
-    pos = 0;
-    myservo.write(pos);
+
+  if (buttonInput1 == HIGH) {
+    pos += 30;
+    servo.write(pos);
     delay(200);
+  }
+
+  if (buttonInput2 == HIGH) {
+    if (pos > 0) {
+      pos -= 10;
+      servo.write(pos);
+      delay(200);
+    }
   }
 }
